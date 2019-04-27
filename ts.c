@@ -23,51 +23,63 @@ void cr_b3();
 void cr_c1();
 void cr_c2();
 void cr_c3();
+void cr_two();
+void cr_tre();
 int main() 
 {
 	system("color A");
-	printf("方程式為二元一次方程式組請輸入代碼(1)\n方程式為三元一次方程式組請輸入代碼(2)\n運算行列式a1請輸入代碼(3)\n運算行列式a2請輸入代碼(4)\n運算行列式a3請輸入代碼(5)\n運算行列式b1請輸入代碼(6)\n運算行列式b2請輸入代碼(7)\n運算行列式b3請輸入代碼(8)\n運算行列式c1請輸入代碼(9)\n運算行列式c2請輸入代碼(10)\n運算行列式c3請輸入代碼(11)\n");
-	scanf("%d",&choose);
-	switch(choose)
+	while(1)
 	{
-	case 1:
-		TWO_for_ONE_open();
-		TWO_for_ONE();
-		Judge_TWO_for_ONE();
-		break;
-	case 2:
-		THREE_for_ONE_open();
-		THREE_for_ONE();
-		Judge_THREE_for_ONE();
-		break;
-	case 3:
-		cr_a1();
-		break;
-	case 4:
-		cr_a2();
-		break;
-	case 5:
-		cr_a3();
-		break;
-	case 6:
-		cr_b1();
-		break;
-	case 7:
-		cr_b2();
-		break;
-	case 8:
-		cr_b3();
-		break;
-	case 9:
-		cr_c1();
-		break;
-	case 10:
-		cr_c2();
-		break;
-	case 11:
-		cr_c3();
-		break;
-		
+		printf("\n方程式為二元一次方程式組請輸入代碼(1)\n方程式為三元一次方程式組請輸入代碼(2)\n運算行列式a1請輸入代碼(3)\n運算行列式a2請輸入代碼(4)\n運算行列式a3請輸入代碼(5)\n運算行列式b1請輸入代碼(6)\n運算行列式b2請輸入代碼(7)\n運算行列式b3請輸入代碼(8)\n運算行列式c1請輸入代碼(9)\n運算行列式c2請輸入代碼(10)\n運算行列式c3請輸入代碼(11)\n運算二階行列式請輸入代碼(12)\n運算三階行列式請輸入代碼(13)\n退出請輸入代碼(20)\n");
+		scanf("%d",&choose);
+		switch(choose)
+		{
+		case 1:
+			TWO_for_ONE_open();
+			TWO_for_ONE();
+			Judge_TWO_for_ONE();
+			break;
+		case 2:
+			THREE_for_ONE_open();
+			THREE_for_ONE();
+			Judge_THREE_for_ONE();
+			break;
+		case 3:
+			cr_a1();
+			break;
+		case 4:
+			cr_a2();
+			break;
+		case 5:
+			cr_a3();
+			break;
+		case 6:
+			cr_b1();
+			break;
+		case 7:
+			cr_b2();
+			break;
+		case 8:
+			cr_b3();
+			break;
+		case 9:
+			cr_c1();
+			break;
+		case 10:
+			cr_c2();
+			break;
+		case 11:
+			cr_c3();
+			break;
+		case 12:
+			cr_two();
+			break;
+		case 13:
+			cr_tre();
+			break;
+		case 20:
+			exit(0);
+		}
 	}
 	return 0;
 	
@@ -415,5 +427,41 @@ void cr_c3()
 	printf("請輸入行列式解係數: ");
 	scanf("%d",&tot);
 	tot=(tot-a3*b1*c2-a2*c1*b3+c1*b2*a3+c2*b3*a1)/(a1*b2-b1*a2);
-	printf("c3為: %d",tot);
+	printf("c3為: %d\n",tot);
+}
+void cr_two()
+{
+	printf("請輸入a1係數: ");
+	scanf("%d",&a1);
+	printf("請輸入b1係數: ");
+	scanf("%d",&b1);
+	printf("請輸入a2係數: ");
+	scanf("%d",&a2);
+	printf("請輸入b2係數: ");
+	scanf("%d",&b2);
+	tot=a1*b2-a2*b1;
+	printf("行列式解為: %d",tot);
+}
+void cr_tre()
+{
+	printf("請輸入a1係數: ");
+	scanf("%d",&a1);
+	printf("請輸入b1係數: ");
+	scanf("%d",&b1);
+	printf("請輸入c1係數: ");
+	scanf("%d",&c1);
+	printf("請輸入a2係數: ");
+	scanf("%d",&a2);
+	printf("請輸入b2係數: ");
+	scanf("%d",&b2);
+	printf("請輸入c2係數: ");
+	scanf("%d",&c2);
+	printf("請輸入a3係數: ");
+	scanf("%d",&a3);
+	printf("請輸入b3係數: ");
+	scanf("%d",&b3);
+	printf("請輸入c3係數: ");
+	scanf("%d",&c3);
+	tot=a1*b2*c3+a2*b3*c1+a3*c2*b1-c1*b2*a3-c2*b3*a1-c3*a2*b1;
+	printf("行列式解為: %d\n",tot);
 }
